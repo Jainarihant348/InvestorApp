@@ -34,7 +34,7 @@ export default function Index() {
       <WebView
         ref={webViewRef}
         source={{
-          uri: "https://power.betaverve.com",
+          uri: process.env.EXPO_PUBLIC_WEBVIEW_URL ?? "",
         }}
         onNavigationStateChange={handleNavigationStateChange}
         style={styles.webview}
