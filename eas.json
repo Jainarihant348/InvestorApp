@@ -16,6 +16,12 @@
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "ascApiKeyPath": "/Users/betalectic/Downloads/AuthKey_RXBR4CQA3G.p8",
+        "ascApiKeyIssuerId": "c5076626-14ae-4eac-ad96-b2f1ba9de3be",
+        "ascApiKeyId": "RXBR4CQA3G"
+      }
+    }
   }
 }
