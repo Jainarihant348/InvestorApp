@@ -59,3 +59,13 @@ After the build is successful, make sure to update the API key in `eas.json` and
 ```bash
 eas submit --platform ios
 ```
+
+## Additional Steps
+
+### Copy .env.example to .env
+
+Make sure to copy the .env.example file to .env to set up your environment variables:
+
+```bash
+cp .env.example .env
+```
