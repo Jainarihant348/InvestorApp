@@ -2,53 +2,59 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+## Get Started
 
-1. Install dependencies
+### 1. Install Dependencies
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-3.
+Run the following command to install the necessary dependencies:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Start the App
 
-4. EAS CLI is the command-line app that you will use to interact with EAS services from your terminal. To install it, run the command:
+To start the app, run:
+
+```bash
+npx expo start
+```
+
+### 3. Install EAS CLI
+
+EAS CLI is the command-line tool for interacting with EAS services. To install it, run:
 
 ```bash
 npm install -g eas-cli
 ```
 
-5. Login to your expo account:
+### 4. Login to Your Expo Account
+
+To log in to your Expo account, run:
 
 ```bash
 eas login
 ```
 
-6. Configure the app using:
+### 5. Configure the App
+
+Configure your app by running:
 
 ```bash
 eas build:configure
 ```
 
-7. To build for ios run:
+### 6. Build for iOS
+
+To build the app for iOS, run:
 
 ```bash
 eas build --profile production --platform ios
 ```
 
-8. After the build is successful, make sure to update the api key in eas.json and then submit the app using:
+### 7. Submit the App
+
+After the build is successful, make sure to update the API key in `eas.json` and then submit the app:
 
 ```bash
 eas submit --platform ios
