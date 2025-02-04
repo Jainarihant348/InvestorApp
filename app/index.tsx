@@ -1,19 +1,48 @@
-import { Text, View } from "react-native";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { useEffect, useRef, useState } from "react";
+import { BackHandler, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native";
 import { WebView } from "react-native-webview";
+import type { WebViewNavigation } from "react-native-webview";
 
 export default function Index() {
+  const webViewRef = useRef<WebView>(null);
+  const [canGoBack, setCanGoBack] = useState(false);
+
+  useEffect(() => {
+    const backAction = () => {
+      if (canGoBack && webViewRef.current) {
+        webViewRef.current.goBack();
+        return true;
+      }
+      return false;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, [canGoBack]);
+
+  const handleNavigationStateChange = (navState: WebViewNavigation) => {
+    setCanGoBack(navState.canGoBack);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <WebView
+        ref={webViewRef}
         source={{
-          uri: "https://i-01jjrn09m7mv856sar6h8svyx5.power.betaverve.com/investor/login",
+          uri: "http://192.168.101.18:8000",
         }}
+        onNavigationStateChange={handleNavigationStateChange}
         style={styles.webview}
       />
     </SafeAreaView>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
